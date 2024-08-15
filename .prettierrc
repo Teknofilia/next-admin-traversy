@@ -1,0 +1,6 @@
+// .prettierrc
+{
+  "plugins": ["prettier-plugin-tailwindcss"]
+  "tailwindConfig": "./styles/tailwind.config.ts"
+
+}

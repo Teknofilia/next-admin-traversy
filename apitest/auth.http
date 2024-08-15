@@ -1,0 +1,18 @@
+### Create User
+POST http://localhost:3000/api/auth/register
+content-type: application/json
+
+{
+    "fullname": "tekno",
+    "email":"idteknofilia@gmail.com",
+    "password": "321654"
+}
+
+### Login User
+POST http://localhost:3000/api/auth/login
+content-type: application/json
+
+{
+    "email":"idteknofilia@gmail.com",
+    "password": "321654"
+}
