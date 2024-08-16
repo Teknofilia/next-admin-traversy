@@ -11,4 +11,21 @@ export const lucia = new Lucia(prismaAdapter, {
             secure: process.env.NODE_ENV === "production",
         },
     },
-})
+    getUserAttributes: (attributes) => {
+		return {
+			// attributes has the type of DatabaseUserAttributes
+			email: attributes.email
+		};
+	}
+});
+
+declare module "lucia" {
+	interface Register {
+		Lucia: typeof lucia;
+		DatabaseUserAttributes: DatabaseUserAttributes;
+	}
+}
+
+interface DatabaseUserAttributes {
+	email: string;
+}
